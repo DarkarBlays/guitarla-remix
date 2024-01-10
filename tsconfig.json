@@ -1,5 +1,5 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/routes/nosotros.jsx", "app/routes/_index.jsx"],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/routes/nosotros.jsx", "app/routes/_index.jsx", "app/components/post.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,

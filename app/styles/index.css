@@ -104,7 +104,7 @@
     align-items: center;
     gap: 2rem;
   }
-  @media(min-width:768px){
+  @media(min-width:678px){
     .footer .navegacion{
       flex-direction: row;  
     }
@@ -136,3 +136,22 @@
     text-decoration: none;
     font-size: 1.8rem;
   }
+
+  .enlace{
+    margin-top: 2rem;
+    display: block;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+  .enlace:hover{
+    background-color: var(--primary);
+}
