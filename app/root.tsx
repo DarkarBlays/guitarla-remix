@@ -2,6 +2,7 @@ import {Meta,Links,Outlet,Scripts,LiveReload,useRouteError, isRouteErrorResponse
 import styles from './styles/index.css'
 import Header from './components/header'
 import Footer from './components/footer';
+import { useState } from 'react';
 
 
 export function meta() {
@@ -40,9 +41,35 @@ export function links(){
 }
 
 export default function App(){
+
+    const [carrito,setCarrito] = useState([])
+    const agregarCarrito = guitarra =>{
+        if(carrito.some(guitarraState => guitarraState.id === guitarra.id)){
+            //iterar sobre el arreglo, e identificar el elemento duplicado
+            const carritoActualizado = carrito.map(guitarraState =>{
+                if(guitarraState.id === guitarra.id){
+                    //Reescribir la cantidad
+                    guitarraState.cantidad = guitarra.cantidad
+                }
+
+                return guitarraState
+            })
+            //añadir al carrito
+            setCarrito(carritoActualizado)
+        }else{
+            //Registro nuevo, agregar al carrito
+            setCarrito([...carrito,guitarra])
+        }
+    }
+
     return(
         <Document>
-            <Outlet/>
+            <Outlet
+                context={{
+                    agregarCarrito,
+                    carrito
+                }}
+            />
         </Document>
     )
 }
